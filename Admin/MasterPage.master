@@ -1,0 +1,255 @@
+﻿<%@ Master Language="VB" CodeFile="MasterPage.master.vb" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Admin Dashboard</title>
+  <meta content="" name="description"/>
+  <meta content="" name="keywords"/>
+  <link href="assets/img/favicon.png" rel="icon"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"/>
+  <link href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet"/>
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet"/>
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet"/>
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet"/>
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet"/>
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet"/>
+    <link href="assets/css/style.css" rel="stylesheet" />
+ 
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="Default.aspx" class="logo d-flex align-items-center">
+        <span class="d-none d-lg-block"><span style="color: darkorange;">Hungry</span><span style="color: blue;">House</span></span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div>
+
+    <div class="search-bar">
+      <form class="search-form d-flex align-items-center" method="post"  action="#">
+        <input type="text" name="query" placeholder="Search" title="Enter search keyword"/>
+        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+      </form>
+    </div><!-- End Search Bar -->
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li><!-- End Search Icon-->
+
+        <li class="nav-item dropdown">
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+            <li class="dropdown-header">
+              You have 4 new notifications
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider"/>
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-exclamation-circle text-warning"></i>
+              <div>
+                <h4>Lorem Ipsum</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>30 min. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider"/>
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-x-circle text-danger"></i>
+              <div>
+                <h4>Atque rerum nesciunt</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>1 hr. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider"/>
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-check-circle text-success"></i>
+              <div>
+                <h4>Sit rerum fuga</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>2 hrs. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider"/>
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-info-circle text-primary"></i>
+              <div>
+                <h4>Dicta reprehenderit</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>4 hrs. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider"/>
+            </li>
+            <li class="dropdown-footer">
+              <a href="#">Show all notifications</a>
+            </li>
+
+          </ul><!-- End Notification Dropdown Items -->
+
+        </li><!-- End Notification Nav -->
+
+        <!-- End Messages Nav -->
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-1" href="users-profile.aspx">
+            <asp:Image ID="profileimg" class="rounded-circle" runat="server" />
+            <span class="d-none d-md-block ps-2">
+                <asp:Label ID="lblUser" runat="server" Text="Label"></asp:Label>
+            </span>
+          </a><!-- End Profile Iamge Icon -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+    <form runat="server">
+  <aside id="sidebar" class="sidebar d-flex flex-column justify-content-between">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link " href="Default.aspx">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+
+    <li class="nav-heading">Pages</li>
+        <li class="nav-item">
+        <a class="nav-link collapsed" href="users-profile.aspx">
+          <i class="bi bi-person"></i>
+          <span>Profile</span>
+        </a>
+      </li>
+
+        <!--Food Section-->
+        <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-food" data-bs-toggle="collapse" href="#">
+          <i class="fa-solid fa-bowl-food"></i><span>Foods</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-food" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li class="nav-item">
+        <a class="nav-link collapsed" href="DisplayFood.aspx">
+          <i class="bi bi-list-check"></i>
+          <span>All Foods</span>
+        </a>
+      </li>
+            <li class="nav-item">
+        <a class="nav-link collapsed" href="add-product.aspx">
+          <i class="bi bi-patch-plus"></i>
+          <span>Add Food</span>
+        </a>
+      </li>
+          <li class="nav-item">
+        <a class="nav-link collapsed" href="add-category.aspx">
+          <i class="bi bi-node-plus"></i>
+          <span>Add Food Category</span>
+        </a>
+      </li>       
+        </ul>
+      </li>
+         
+        <!--Restaurant Section-->
+        <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-rest" data-bs-toggle="collapse" href="#">
+          <i class="fa-solid fa-utensils"></i><span>Restaurant</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-rest" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li class="nav-item">
+        <a class="nav-link collapsed" href="AllRestaurant.aspx">
+          <i class="bi bi-list-check"></i>
+          <span>All Restaurant</span>
+        </a>
+      </li>
+            <li class="nav-item">
+        <a class="nav-link collapsed" href="AddRestaurant.aspx">
+          <i class="bi bi-patch-plus"></i>
+          <span>Add New Restaurant</span>
+        </a>
+      </li>
+        </ul>
+      </li>
+       
+    
+
+        
+    </ul>
+
+      <asp:Button ID="btnLogout" runat="server" Text="Logout" CssClass="btn btn-danger col-12"/>
+      
+  </aside><!-- End Sidebar-->
+        
+    <main id="main" class="main">
+    <div>
+
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+  </main>
+</form>
+  <!-- ======= Footer ======= -->
+  <!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+    
+</body>
+</html>
